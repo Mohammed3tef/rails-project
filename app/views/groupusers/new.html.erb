@@ -1,0 +1,103 @@
+
+<html>
+<head>
+    <title>forget password</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag "/stylesheets/groupusers.scss"%>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>  
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    body{
+      background: #dd7f36;
+
+    }
+    </style>
+  </head>
+<body>
+<div id="order">
+
+
+
+<%= form_tag("/groupusers/create",remote: true ,method:"get") do  %>
+  <div class="add-new">
+    <div class="group_field">
+      
+      <%= text_field_tag(:group_name) %> 
+
+    </div>
+    <div>
+     <%= submit_tag "add New Group", :class => "btn btn-primary", :id => "add" %>
+    
+    </div>
+ 
+ <div id="mydiv">
+   <ul style="border:1px solid ;width:35%" id=" id="myshow">
+    <%= link_to "Addusers", groupusers_show_path(:user_id => current_user.id),method: :get , remote:true %>
+  
+  <% $currentgroupusers.each  do |groupuser| %>
+    <li>
+        <%= groupuser[0].group_name%>
+       
+         <%= link_to "Showusers", groupusers_display_path(:account_id => groupuser[0].id),method: :get ,remote:true %>
+     
+  <%=link_to 'Deletegroup',  groupusers_path(:account_id => groupuser[0].id), method: :delete, data: { confirm: "Are you sure?" ,remote:true},class:"deletee" %>
+           
+
+             <div  style="border:1px solid ;width:75% ;margin-top:5%" id="list">
+            <h5>  chooce Friends to add in    <%= groupuser[0].group_name%> Group</h5>
+<ul>
+  
+<%   $currentuserfriendsnamer.each  do |userfindff| %>
+    <li>
+       
+         <%= userfindff[0].username%>
+         <% $flage %>
+    <%= link_to "Adduser", groupusers_add_path(:addfriend_id => userfindff[0].id,:groupid=>groupuser[0].id),method: :get,remote:true%>
+    
+
+
+    </li>
+      
+     
+       <% end %>
+</ul>
+</div>
+
+    <%= yield %> 
+
+    </li>
+  <% end %>
+</ul>
+</div>
+ 
+<div  style="border:1px solid ;width:35%" id="list">
+
+
+<ul >        
+<% $arr.each  do |userfind| %>
+    <li>
+       
+         <%= userfind[0].username %>
+         <%= userfind[0].id %>
+         <% $userfind=userfind[0].id%>
+          <%=link_to 'DElETuser',  groupusers_edit_path(:delfriend_id => userfind[0].id), method: :delete, data: { confirm: "Are you sure?",remote:true,remote:true },class:"delete" %>
+
+    </li>
+     <% end %>
+      
+</ul>
+</div>
+</div>
+<%end%>
+
+</div>
+</body>
+</html>
+  
+
+
+
+
+ 
+ 

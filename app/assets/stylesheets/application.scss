@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+  .field{
+    width: 260px;
+    height: 72px;
+    
+  }
+  .action{
+    width: 100px;
+    height: 72px;
+  }
+
+  button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    width: 440px;
+    margin: 18px auto;
+}
+// .hh{
+//   text-align: center;
+// }
+.container{
+    margin-left:38% ;    
+    margin-top: 5% ;    
+  }
+
+  input  {
+    overflow: visible;
+    width: 169%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: -2.5rem;
+
+    // margin-top: 26px;
+    // margin-bottom: 20px;
+
+}
+
+label{
+  height: 50px;
+}
+
+h1{
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    line-height: 0.2;
+
+}
