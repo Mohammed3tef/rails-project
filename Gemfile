@@ -31,7 +31,7 @@ gem 'omniauth-github', '~> 1.3.0'
 gem 'omniauth-google-oauth2', '~> 0.1.16'
 # gem 'activerecord-session_store', '~> 1.1.1'
 gem "activerecord-session_store", github: "rails/activerecord-session_store", branch: "master"
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'simple_form'
 

@@ -314,7 +314,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-session_store!
   bootsnap (>= 1.4.4)
-  bootstrap (~> 4.3.1)
+  bootstrap
   byebug
   capybara (>= 3.26)
   devise
